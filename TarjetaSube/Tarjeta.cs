@@ -6,10 +6,10 @@ namespace TarjetaSube
     {
         private int saldo;
         private const int LIMITE_SALDO = 40000;
+        private const int LIMITE_NEGATIVO = -1200; // Nuevo límite de saldo negativo
         private int[] CARGAS_VALIDAS = { 2000, 3000, 4000, 5000, 8000, 10000, 15000, 20000, 25000, 30000 };
         private const int TARIFA_PASAJE = 1580;
 
-        // Propiedad pública para tests
         public int Saldo => saldo;
 
         public Tarjeta()
@@ -33,16 +33,26 @@ namespace TarjetaSube
                     break;
                 }
             }
+
             if (!valido) return false;
             if (saldo + monto > LIMITE_SALDO) return false;
 
+            // Si el saldo es negativo, al cargar se descuenta automáticamente la deuda
             saldo += monto;
+
+            if (saldo > LIMITE_SALDO)
+                saldo = LIMITE_SALDO;
+
             return true;
         }
 
         public bool Descontar(int monto)
         {
-            if (monto > saldo) return false;
+            // Permitir saldo negativo hasta el límite
+            if (saldo - monto < LIMITE_NEGATIVO)
+            {
+                return false;
+            }
 
             saldo -= monto;
             return true;

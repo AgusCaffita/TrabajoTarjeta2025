@@ -74,23 +74,32 @@ namespace TarjetaSubeTest
         }
 
         [Test]
-        public void TestDescontarConSaldoInsuficiente()
+        public void TestDescontarConSaldoInsuficientePeroDentroDelLimiteNegativo()
         {
             Tarjeta tarjeta = new Tarjeta();
-            tarjeta.Cargar(2000);
-            tarjeta.Descontar(1580);
-            bool resultado = tarjeta.Descontar(1000);
-            Assert.IsFalse(resultado);
-            Assert.AreEqual(420, tarjeta.ObtenerSaldo());
+            tarjeta.Cargar(1000);
+            bool resultado = tarjeta.Descontar(2000); // quedaría -1000
+            Assert.IsTrue(resultado);
+            Assert.AreEqual(-1000, tarjeta.ObtenerSaldo());
         }
 
         [Test]
-        public void TestNoPermitirSaldoNegativo()
+        public void TestNoPermitirMasDelLimiteNegativo()
         {
             Tarjeta tarjeta = new Tarjeta();
-            bool resultado = tarjeta.Descontar(100);
+            tarjeta.Descontar(1200); // -1200 permitido
+            bool resultado = tarjeta.Descontar(100); // pasaría -1300, no permitido
             Assert.IsFalse(resultado);
-            Assert.AreEqual(0, tarjeta.ObtenerSaldo());
+            Assert.AreEqual(-1200, tarjeta.ObtenerSaldo());
+        }
+
+        [Test]
+        public void TestRecuperarSaldoNegativoAlCargar()
+        {
+            Tarjeta tarjeta = new Tarjeta();
+            tarjeta.Descontar(1200); // -1200 permitido
+            tarjeta.Cargar(2000); // debería restar la deuda
+            Assert.AreEqual(800, tarjeta.ObtenerSaldo());
         }
 
         [Test]
@@ -101,6 +110,17 @@ namespace TarjetaSubeTest
             bool resultado = tarjeta.Pagar();
             Assert.IsTrue(resultado);
             Assert.AreEqual(420, tarjeta.ObtenerSaldo());
+        }
+
+        [Test]
+        public void TestNoPermitirSaldoMenorQueMenosMilDoscientos()
+        {
+            Tarjeta tarjeta = new Tarjeta();
+            bool primerPago = tarjeta.Descontar(1200); // llega justo al límite
+            bool segundoPago = tarjeta.Descontar(100); // debería fallar
+            Assert.IsTrue(primerPago);
+            Assert.IsFalse(segundoPago);
+            Assert.AreEqual(-1200, tarjeta.ObtenerSaldo());
         }
     }
 }
