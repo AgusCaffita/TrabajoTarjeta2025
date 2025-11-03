@@ -14,6 +14,29 @@ namespace TarjetaSubeTest
         }
 
         [Test]
+        public void TestTarjetaTieneIdUnico()
+        {
+            Tarjeta tarjeta1 = new Tarjeta();
+            Tarjeta tarjeta2 = new Tarjeta();
+            
+            Assert.AreNotEqual(tarjeta1.Id, tarjeta2.Id);
+            Assert.Greater(tarjeta1.Id, 0);
+            Assert.Greater(tarjeta2.Id, 0);
+        }
+
+        [Test]
+        public void TestIdSeIncrementaAutomaticamente()
+        {
+            Tarjeta tarjeta1 = new Tarjeta();
+            int id1 = tarjeta1.Id;
+            
+            Tarjeta tarjeta2 = new Tarjeta();
+            int id2 = tarjeta2.Id;
+            
+            Assert.AreEqual(id1 + 1, id2);
+        }
+
+        [Test]
         [TestCase(2000)]
         [TestCase(3000)]
         [TestCase(4000)]
@@ -110,6 +133,7 @@ namespace TarjetaSubeTest
             Assert.IsTrue(resultado);
             Assert.AreEqual(420, tarjeta.ObtenerSaldo());
         }
+
         [Test]
         public void TestMedioBoletoDescuentaMitad()
         {
@@ -118,6 +142,15 @@ namespace TarjetaSubeTest
             bool resultado = tarjeta.Pagar();
             Assert.IsTrue(resultado);
             Assert.AreEqual(2000 - 1580 / 2, tarjeta.ObtenerSaldo());
+        }
+
+        [Test]
+        public void TestMedioBoletoTieneIdUnico()
+        {
+            MedioBoleto tarjeta1 = new MedioBoleto();
+            MedioBoleto tarjeta2 = new MedioBoleto();
+            
+            Assert.AreNotEqual(tarjeta1.Id, tarjeta2.Id);
         }
 
         [Test]
@@ -131,6 +164,15 @@ namespace TarjetaSubeTest
         }
 
         [Test]
+        public void TestBoletoGratuitoTieneIdUnico()
+        {
+            BoletoGratuito tarjeta1 = new BoletoGratuito();
+            BoletoGratuito tarjeta2 = new BoletoGratuito();
+            
+            Assert.AreNotEqual(tarjeta1.Id, tarjeta2.Id);
+        }
+
+        [Test]
         public void TestFranquiciaCompletaSiemprePuedePagar()
         {
             FranquiciaCompleta tarjeta = new FranquiciaCompleta();
@@ -139,6 +181,14 @@ namespace TarjetaSubeTest
             Assert.IsTrue(resultado);
             Assert.AreEqual(0, tarjeta.ObtenerSaldo()); 
         }
-    }
 
+        [Test]
+        public void TestFranquiciaCompletaTieneIdUnico()
+        {
+            FranquiciaCompleta tarjeta1 = new FranquiciaCompleta();
+            FranquiciaCompleta tarjeta2 = new FranquiciaCompleta();
+            
+            Assert.AreNotEqual(tarjeta1.Id, tarjeta2.Id);
+        }
+    }
 }

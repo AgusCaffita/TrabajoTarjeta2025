@@ -4,16 +4,19 @@ namespace TarjetaSube
 {
     public class Tarjeta
     {
+        private static int contadorId = 0;
+        public int Id { get; private set; }
         protected int saldo;
         private const int LIMITE_SALDO = 40000;
         private const int LIMITE_NEGATIVO = -1200;
         private int[] CARGAS_VALIDAS = { 2000, 3000, 4000, 5000, 8000, 10000, 15000, 20000, 25000, 30000 };
         protected const int TARIFA_PASAJE = 1580;
 
-    public int Saldo => saldo;
+        public int Saldo => saldo;
 
         public Tarjeta()
         {
+            Id = ++contadorId;
             saldo = 0;
         }
 
@@ -103,5 +106,4 @@ namespace TarjetaSube
             return true;
         }
     }
-
 }

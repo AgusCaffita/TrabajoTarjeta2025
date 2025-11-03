@@ -20,26 +20,16 @@ namespace TarjetaSubeTest
             Tarjeta tarjeta = new Tarjeta();
             tarjeta.Cargar(5000);
 
-            bool pagoExitoso = colectivo.PagarCon(tarjeta);
+            Boleto boleto = colectivo.PagarCon(tarjeta);
 
-            Assert.IsTrue(pagoExitoso);
+            Assert.IsNotNull(boleto);
             Assert.AreEqual(3420, tarjeta.ObtenerSaldo());
-
-
-            Boleto boleto = new Boleto(
-                tipoTarjeta: "Normal",
-                lineaColectivo: "120",
-                totalAbonado: 1580,
-                saldoRestante: tarjeta.ObtenerSaldo()
-            );
-
             Assert.AreEqual(1580, boleto.TotalAbonado);
             Assert.AreEqual(3420, boleto.SaldoRestante);
             Assert.AreEqual("120", boleto.LineaColectivo);
-            Assert.AreEqual("Normal", boleto.TipoTarjeta);
+            Assert.AreEqual("Tarjeta", boleto.TipoTarjeta);
+            Assert.AreEqual(tarjeta.Id, boleto.IdTarjeta);
         }
-
-       
 
         [Test]
         public void TestPagarConTarjetaSinSaldo()
@@ -47,9 +37,9 @@ namespace TarjetaSubeTest
             Colectivo colectivo = new Colectivo("102");
             Tarjeta tarjeta = new Tarjeta();
 
-            bool pagoExitoso = colectivo.PagarCon(tarjeta);
+            Boleto boleto = colectivo.PagarCon(tarjeta);
 
-            Assert.IsFalse(pagoExitoso);
+            Assert.IsNull(boleto);
             Assert.AreEqual(0, tarjeta.ObtenerSaldo());
         }
 
@@ -60,12 +50,12 @@ namespace TarjetaSubeTest
             Tarjeta tarjeta = new Tarjeta();
             tarjeta.Cargar(10000);
 
-            bool pago1 = colectivo.PagarCon(tarjeta);
-            Assert.IsTrue(pago1);
+            Boleto boleto1 = colectivo.PagarCon(tarjeta);
+            Assert.IsNotNull(boleto1);
             Assert.AreEqual(8420, tarjeta.ObtenerSaldo());
 
-            bool pago2 = colectivo.PagarCon(tarjeta);
-            Assert.IsTrue(pago2);
+            Boleto boleto2 = colectivo.PagarCon(tarjeta);
+            Assert.IsNotNull(boleto2);
             Assert.AreEqual(6840, tarjeta.ObtenerSaldo());
         }
 
@@ -76,10 +66,12 @@ namespace TarjetaSubeTest
             MedioBoleto tarjeta = new MedioBoleto();
             tarjeta.Cargar(2000);
 
-            bool pagoExitoso = colectivo.PagarCon(tarjeta);
+            Boleto boleto = colectivo.PagarCon(tarjeta);
 
-            Assert.IsTrue(pagoExitoso);
+            Assert.IsNotNull(boleto);
             Assert.AreEqual(2000 - 1580 / 2, tarjeta.ObtenerSaldo());
+            Assert.AreEqual(790, boleto.TotalAbonado);
+            Assert.AreEqual(tarjeta.Id, boleto.IdTarjeta);
         }
 
         [Test]
@@ -88,10 +80,12 @@ namespace TarjetaSubeTest
             Colectivo colectivo = new Colectivo("201");
             BoletoGratuito tarjeta = new BoletoGratuito();
 
-            bool pagoExitoso = colectivo.PagarCon(tarjeta);
+            Boleto boleto = colectivo.PagarCon(tarjeta);
 
-            Assert.IsTrue(pagoExitoso);
+            Assert.IsNotNull(boleto);
             Assert.AreEqual(0, tarjeta.ObtenerSaldo());
+            Assert.AreEqual(0, boleto.TotalAbonado);
+            Assert.AreEqual(tarjeta.Id, boleto.IdTarjeta);
         }
 
         [Test]
@@ -100,10 +94,12 @@ namespace TarjetaSubeTest
             Colectivo colectivo = new Colectivo("202");
             FranquiciaCompleta tarjeta = new FranquiciaCompleta();
 
-            bool pagoExitoso = colectivo.PagarCon(tarjeta);
+            Boleto boleto = colectivo.PagarCon(tarjeta);
 
-            Assert.IsTrue(pagoExitoso);
-            Assert.AreEqual(0, tarjeta.ObtenerSaldo()); 
+            Assert.IsNotNull(boleto);
+            Assert.AreEqual(0, tarjeta.ObtenerSaldo());
+            Assert.AreEqual(0, boleto.TotalAbonado);
+            Assert.AreEqual(tarjeta.Id, boleto.IdTarjeta);
         }
 
         [Test]
@@ -113,18 +109,28 @@ namespace TarjetaSubeTest
             MedioBoleto tarjeta = new MedioBoleto();
             tarjeta.Cargar(2000);
 
-            bool pagoExitoso = colectivo.PagarCon(tarjeta);
+            Boleto boleto = colectivo.PagarCon(tarjeta);
 
-            Assert.IsTrue(pagoExitoso);
-
-            Boleto boleto = new Boleto(
-                tipoTarjeta: tarjeta.GetType().Name,
-                lineaColectivo: "203",
-                totalAbonado: 1580,
-                saldoRestante: tarjeta.ObtenerSaldo()
-            );
-
+            Assert.IsNotNull(boleto);
             Assert.AreEqual("MedioBoleto", boleto.TipoTarjeta);
+        }
+
+        [Test]
+        public void TestBoletoRetornadoContieneTodosLosDatos()
+        {
+            Colectivo colectivo = new Colectivo("150");
+            Tarjeta tarjeta = new Tarjeta();
+            tarjeta.Cargar(5000);
+
+            Boleto boleto = colectivo.PagarCon(tarjeta);
+
+            Assert.IsNotNull(boleto);
+            Assert.AreEqual("Tarjeta", boleto.TipoTarjeta);
+            Assert.AreEqual("150", boleto.LineaColectivo);
+            Assert.AreEqual(1580, boleto.TotalAbonado);
+            Assert.AreEqual(3420, boleto.SaldoRestante);
+            Assert.AreEqual(tarjeta.Id, boleto.IdTarjeta);
+            Assert.IsNotNull(boleto.Fecha);
         }
     }
 }

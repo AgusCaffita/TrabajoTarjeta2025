@@ -5091,11 +5091,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\TP_COLE\\TrabajoTarjeta2025\\TarjetaSubeTest\\TarjetaSubeTest.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\TP_COLE_2\\TrabajoTarjeta2025\\TarjetaSubeTest\\TarjetaSubeTest.csproj",
       "projectName": "TarjetaSubeTest",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\TP_COLE\\TrabajoTarjeta2025\\TarjetaSubeTest\\TarjetaSubeTest.csproj",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\TP_COLE_2\\TrabajoTarjeta2025\\TarjetaSubeTest\\TarjetaSubeTest.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Desktop\\TP_COLE\\TrabajoTarjeta2025\\TarjetaSubeTest\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\TP_COLE_2\\TrabajoTarjeta2025\\TarjetaSubeTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Usuario\\Descargas\\Vs shared\\NuGetPackages"
@@ -5116,8 +5116,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Usuario\\Desktop\\TP_COLE\\TrabajoTarjeta2025\\TarjetaSube\\TarjetaSube.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Desktop\\TP_COLE\\TrabajoTarjeta2025\\TarjetaSube\\TarjetaSube.csproj"
+            "C:\\Users\\Usuario\\Desktop\\TP_COLE_2\\TrabajoTarjeta2025\\TarjetaSube\\TarjetaSube.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Desktop\\TP_COLE_2\\TrabajoTarjeta2025\\TarjetaSube\\TarjetaSube.csproj"
             }
           }
         }

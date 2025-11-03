@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\TP_COLE\\TrabajoTarjeta2025\\TarjetaSube\\TarjetaSube.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\TP_COLE_2\\TrabajoTarjeta2025\\TarjetaSube\\TarjetaSube.csproj",
       "projectName": "TarjetaSube",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\TP_COLE\\TrabajoTarjeta2025\\TarjetaSube\\TarjetaSube.csproj",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\TP_COLE_2\\TrabajoTarjeta2025\\TarjetaSube\\TarjetaSube.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Desktop\\TP_COLE\\TrabajoTarjeta2025\\TarjetaSube\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\TP_COLE_2\\TrabajoTarjeta2025\\TarjetaSube\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Usuario\\Descargas\\Vs shared\\NuGetPackages"
