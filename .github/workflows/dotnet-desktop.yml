@@ -28,6 +28,10 @@ jobs:
       - name: Build
         run: dotnet build --no-restore --configuration Release
 
+      - name: List Test Results directory
+        run: dir ./TestResults
+
+
       - name: Run tests with coverage
         run: dotnet test --no-build --collect:"XPlat Code Coverage" --results-directory:./TestResults
 
