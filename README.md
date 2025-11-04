@@ -4,6 +4,7 @@
 
 El siguiente trabajo es un enunciado iterativo. Regularmente se ampliará y/o modificará el enunciado.
 
+
 <br>
 
 ## Aclaraciones:
