@@ -342,9 +342,7 @@ namespace TarjetaSubeTest
         [Test]
         public void TestLineaInterurbanaTarifaNormal()
         {
-            TiempoFalso tiempoFalso = new TiempoFalso();
-            tiempoFalso.AgregarMinutos(360); 
-            Colectivo colectivo = new Colectivo("300", true, tiempoFalso);
+            Colectivo colectivo = new Colectivo("Rosario-Galvez", true);
             Tarjeta tarjeta = new Tarjeta();
             tarjeta.Cargar(5000);
 
@@ -353,22 +351,57 @@ namespace TarjetaSubeTest
             Assert.IsNotNull(boleto);
             Assert.AreEqual(3000, boleto.TotalAbonado);
             Assert.AreEqual(2000, boleto.SaldoRestante);
+            Assert.AreEqual("Rosario-Galvez", boleto.LineaColectivo);
         }
 
         [Test]
         public void TestLineaInterurbanaMedioBoleto()
         {
             TiempoFalso tiempoFalso = new TiempoFalso();
-            tiempoFalso.AgregarMinutos(360); 
-            Colectivo colectivo = new Colectivo("301", true, tiempoFalso);
+            tiempoFalso.AgregarMinutos(360); // asegura horario de franquicia
+
+            Colectivo colectivo = new Colectivo("Rosario-Baigorria", true, tiempoFalso);
             MedioBoleto tarjeta = new MedioBoleto();
-            tarjeta.Cargar(2000);
+            tarjeta.Cargar(5000);
 
             Boleto boleto = colectivo.PagarCon(tarjeta);
 
             Assert.IsNotNull(boleto);
             Assert.AreEqual(1500, boleto.TotalAbonado);
-            Assert.AreEqual(500, boleto.SaldoRestante);
+            Assert.AreEqual(3500, boleto.SaldoRestante);
+            Assert.AreEqual("MedioBoleto", boleto.TipoTarjeta);
+        }
+
+        [Test]
+        public void TestLineaInterurbanaFranquiciaCompleta()
+        {
+            TiempoFalso tiempoFalso = new TiempoFalso();
+            tiempoFalso.AgregarMinutos(360);
+
+            Colectivo colectivo = new Colectivo("Rosario-Galvez", true, tiempoFalso);
+            FranquiciaCompleta tarjeta = new FranquiciaCompleta();
+
+            Boleto boleto = colectivo.PagarCon(tarjeta);
+
+            Assert.IsNotNull(boleto);
+            Assert.AreEqual(0, boleto.TotalAbonado);
+            Assert.AreEqual(0, boleto.SaldoRestante);
+        }
+
+        [Test]
+        public void TestLineaInterurbanaBoletoGratuito()
+        {
+            TiempoFalso tiempoFalso = new TiempoFalso();
+            tiempoFalso.AgregarMinutos(360);
+
+            Colectivo colectivo = new Colectivo("Rosario-Baigorria", true, tiempoFalso);
+            BoletoGratuito tarjeta = new BoletoGratuito();
+
+            Boleto boleto = colectivo.PagarCon(tarjeta);
+
+            Assert.IsNotNull(boleto);
+            Assert.AreEqual(0, boleto.TotalAbonado);
+            Assert.AreEqual(0, boleto.SaldoRestante);
         }
     }
 }
