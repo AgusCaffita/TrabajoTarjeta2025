@@ -1,5 +1,10 @@
 [![codecov](https://codecov.io/gh/AgusCaffita/TrabajoTarjeta2025/graph/badge.svg?token=QH7BEFZM76)](https://codecov.io/gh/AgusCaffita/TrabajoTarjeta2025)
 
+<img width="978" height="482" alt="image" src="https://github.com/user-attachments/assets/aee64327-a586-41f9-8e89-84e2ed7cb5d0" />
+
+<img width="2730" height="1110" alt="image" src="https://github.com/user-attachments/assets/f7f6c1e4-e96f-4056-83aa-b58be187dcf8" />
+
+
 # Trabajo Tarjeta 2025
 
 El siguiente trabajo es un enunciado iterativo. Regularmente se ampliará y/o modificará el enunciado.
