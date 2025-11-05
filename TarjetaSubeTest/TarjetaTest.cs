@@ -400,6 +400,119 @@ namespace TarjetaSubeTest
 
             Assert.AreEqual(15, tarjeta.ObtenerCantidadViajesMes());
         }
+
+        [Test]
+        public void TestAcreditarCarga_SinSaldoPendiente_NoHaceNada()
+        {
+            Tarjeta tarjeta = new Tarjeta();
+            tarjeta.Cargar(2000);
+            int saldoInicial = tarjeta.ObtenerSaldo();
+            int saldoPendienteInicial = tarjeta.SaldoPendiente;
+
+            tarjeta.AcreditarCarga();
+
+            Assert.AreEqual(saldoInicial, tarjeta.ObtenerSaldo());
+            Assert.AreEqual(saldoPendienteInicial, tarjeta.SaldoPendiente);
+        }
+
+        [Test]
+        public void TestAcreditarCarga_SaldoEnLimite_NoAcredita()
+        {
+            Tarjeta tarjeta = new Tarjeta();
+            tarjeta.Cargar(30000);
+            tarjeta.Cargar(30000);
+            int saldoPendienteInicial = tarjeta.SaldoPendiente;
+
+            tarjeta.AcreditarCarga();
+
+            Assert.AreEqual(56000, tarjeta.ObtenerSaldo());
+            Assert.AreEqual(saldoPendienteInicial, tarjeta.SaldoPendiente);
+        }
+
+        [Test]
+public void TestObtenerDescuento_Viaje29_NoDescuento()
+{
+    TiempoFalso tiempo = new TiempoFalso();
+    Tarjeta tarjeta = new Tarjeta();
+    
+    // Registrar 28 viajes (el próximo será el #29)
+    for (int i = 0; i < 28; i++)
+        tarjeta.RegistrarViaje(tiempo);
+    
+    Colectivo colectivo = new Colectivo("152", tiempo);
+    tarjeta.Cargar(5000);
+    Boleto boleto = colectivo.PagarCon(tarjeta);
+    
+    Assert.AreEqual(1580, boleto.TotalAbonado); // Viaje #29 - sin descuento
+}
+
+        [Test]
+public void TestObtenerDescuento_Viaje59_20PorCientoDescuento()
+{
+    TiempoFalso tiempo = new TiempoFalso();
+    Tarjeta tarjeta = new Tarjeta();
+    
+    // Registrar 58 viajes (el próximo será el #59)
+    for (int i = 0; i < 58; i++)
+        tarjeta.RegistrarViaje(tiempo);
+    
+    Colectivo colectivo = new Colectivo("152", tiempo);
+    tarjeta.Cargar(5000);
+    Boleto boleto = colectivo.PagarCon(tarjeta);
+    
+    Assert.AreEqual(1264, boleto.TotalAbonado); // Viaje #59 - 20% descuento
+}
+
+        [Test]
+public void TestObtenerDescuento_Viaje80_25PorCientoDescuento()
+{
+    TiempoFalso tiempo = new TiempoFalso();
+    Tarjeta tarjeta = new Tarjeta();
+    
+    // Registrar 79 viajes (el próximo será el #80)
+    for (int i = 0; i < 79; i++)
+        tarjeta.RegistrarViaje(tiempo);
+    
+    Colectivo colectivo = new Colectivo("152", tiempo);
+    tarjeta.Cargar(5000);
+    Boleto boleto = colectivo.PagarCon(tarjeta);
+    
+    Assert.AreEqual(1185, boleto.TotalAbonado); // Viaje #80 - 25% descuento
+}
+
+        [Test]
+        public void TestAcreditarCarga_ParcialConEspacioDisponible()
+        {
+            Tarjeta tarjeta = new Tarjeta();
+            tarjeta.Cargar(30000);
+            tarjeta.Cargar(30000); // 56000 + 4000 pendientes
+
+            Assert.AreEqual(56000, tarjeta.ObtenerSaldo());
+            Assert.AreEqual(4000, tarjeta.SaldoPendiente);
+
+            tarjeta.Descontar(2000); // Libera 2000 de espacio
+            tarjeta.AcreditarCarga();
+
+            Assert.AreEqual(56000, tarjeta.ObtenerSaldo()); // Se mantiene en límite
+            Assert.AreEqual(2000, tarjeta.SaldoPendiente); // 2000 acreditados, 2000 pendientes
+        }
+        
+        [Test]
+        public void TestCalcularTarifaConDescuento_EnClasesDerivadas_RetornaTarifaBase()
+        {
+            TiempoFalso tiempo = new TiempoFalso();
+            tiempo.AgregarMinutos(360);
+            
+            MedioBoleto medio = new MedioBoleto();
+            BoletoGratuito gratuito = new BoletoGratuito();
+            FranquiciaCompleta franquicia = new FranquiciaCompleta();
+            
+            int tarifaBase = 1580;
+            
+            Assert.AreEqual(tarifaBase, medio.CalcularTarifaConDescuento(tarifaBase, tiempo));
+            Assert.AreEqual(tarifaBase, gratuito.CalcularTarifaConDescuento(tarifaBase, tiempo));
+            Assert.AreEqual(tarifaBase, franquicia.CalcularTarifaConDescuento(tarifaBase, tiempo));
+        }
     }
 
 }

@@ -514,5 +514,89 @@ namespace TarjetaSubeTest
             Assert.AreEqual(0, b2.TotalAbonado);
             Assert.AreEqual(2000 - 790, medio.ObtenerSaldo());
         }
+
+        [Test]
+        public void TestMedioBoleto_FueraDeHorarioFranquicia_NoPuedeViajar()
+        {
+            TiempoFalso tiempoFalso = new TiempoFalso();
+            tiempoFalso.AgregarMinutos(1380); // 23:00 - Fuera de horario
+            Colectivo colectivo = new Colectivo("200", tiempoFalso);
+            MedioBoleto tarjeta = new MedioBoleto();
+            tarjeta.Cargar(5000);
+
+            Boleto boleto = colectivo.PagarCon(tarjeta);
+
+            Assert.IsNull(boleto);
+        }
+
+        [Test]
+        public void TestMedioBoleto_FinDeSemana_NoPuedeViajar()
+        {
+            TiempoFalso tiempoFalso = new TiempoFalso();
+            tiempoFalso.AgregarDias(5); // Sábado
+            tiempoFalso.AgregarMinutos(360); // 6:00 - Dentro del horario pero fin de semana
+            Colectivo colectivo = new Colectivo("200", tiempoFalso);
+            MedioBoleto tarjeta = new MedioBoleto();
+            tarjeta.Cargar(5000);
+
+            Boleto boleto = colectivo.PagarCon(tarjeta);
+
+            Assert.IsNull(boleto);
+        }
+
+        [Test]
+        public void TestBoletoGratuito_FueraDeHorarioFranquicia_NoPuedeViajar()
+        {
+            TiempoFalso tiempoFalso = new TiempoFalso();
+            tiempoFalso.AgregarMinutos(1380); // 23:00 - Fuera de horario
+            Colectivo colectivo = new Colectivo("201", tiempoFalso);
+            BoletoGratuito tarjeta = new BoletoGratuito();
+
+            Boleto boleto = colectivo.PagarCon(tarjeta);
+
+            Assert.IsNull(boleto);
+        }
+
+        [Test]
+        public void TestFranquiciaCompleta_FueraDeHorarioFranquicia_NoPuedeViajar()
+        {
+            TiempoFalso tiempoFalso = new TiempoFalso();
+            tiempoFalso.AgregarMinutos(1380); // 23:00 - Fuera de horario
+            Colectivo colectivo = new Colectivo("202", tiempoFalso);
+            FranquiciaCompleta tarjeta = new FranquiciaCompleta();
+
+            Boleto boleto = colectivo.PagarCon(tarjeta);
+
+            Assert.IsNull(boleto);
+        }
+
+        [Test]
+        public void TestBoletoGratuito_FinDeSemana_NoPuedeViajar()
+        {
+            TiempoFalso tiempoFalso = new TiempoFalso();
+            tiempoFalso.AgregarDias(5); // Sábado
+            tiempoFalso.AgregarMinutos(360); // 6:00 - Dentro del horario pero fin de semana
+            Colectivo colectivo = new Colectivo("201", tiempoFalso);
+            BoletoGratuito tarjeta = new BoletoGratuito();
+
+            Boleto boleto = colectivo.PagarCon(tarjeta);
+
+            Assert.IsNull(boleto);
+        }
+
+        [Test]
+        public void TestFranquiciaCompleta_FinDeSemana_NoPuedeViajar()
+        {
+            TiempoFalso tiempoFalso = new TiempoFalso();
+            tiempoFalso.AgregarDias(5); // Sábado
+            tiempoFalso.AgregarMinutos(360); // 6:00 - Dentro del horario pero fin de semana
+            Colectivo colectivo = new Colectivo("202", tiempoFalso);
+            FranquiciaCompleta tarjeta = new FranquiciaCompleta();
+
+            Boleto boleto = colectivo.PagarCon(tarjeta);
+
+            Assert.IsNull(boleto);
+        }
+
     }
 }

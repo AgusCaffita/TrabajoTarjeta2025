@@ -214,10 +214,10 @@ var assemblies = [
     "name": "TarjetaSube",
     "classes": [
       { "name": "TarjetaSube.Boleto", "rp": "TarjetaSube_Boleto.html", "cl": 23, "ucl": 0, "cal": 23, "tl": 36, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TarjetaSube.BoletoGratuito", "rp": "TarjetaSube_BoletoGratuito.html", "cl": 38, "ucl": 10, "cal": 48, "tl": 415, "cb": 16, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TarjetaSube.BoletoGratuito", "rp": "TarjetaSube_BoletoGratuito.html", "cl": 43, "ucl": 5, "cal": 48, "tl": 415, "cb": 19, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TarjetaSube.Colectivo", "rp": "TarjetaSube_Colectivo.html", "cl": 65, "ucl": 2, "cal": 67, "tl": 105, "cb": 19, "tb": 20, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TarjetaSube.FranquiciaCompleta", "rp": "TarjetaSube_FranquiciaCompleta.html", "cl": 37, "ucl": 8, "cal": 45, "tl": 415, "cb": 19, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TarjetaSube.MedioBoleto", "rp": "TarjetaSube_MedioBoleto.html", "cl": 48, "ucl": 8, "cal": 56, "tl": 415, "cb": 20, "tb": 26, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TarjetaSube.FranquiciaCompleta", "rp": "TarjetaSube_FranquiciaCompleta.html", "cl": 40, "ucl": 5, "cal": 45, "tl": 415, "cb": 19, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TarjetaSube.MedioBoleto", "rp": "TarjetaSube_MedioBoleto.html", "cl": 52, "ucl": 4, "cal": 56, "tl": 415, "cb": 22, "tb": 26, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TarjetaSube.Program", "rp": "TarjetaSube_Program.html", "cl": 0, "ucl": 2, "cal": 2, "tl": 13, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TarjetaSube.Tarjeta", "rp": "TarjetaSube_Tarjeta.html", "cl": 109, "ucl": 2, "cal": 111, "tl": 415, "cb": 37, "tb": 38, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TarjetaSube.Tiempo", "rp": "TarjetaSube_Tiempo.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 16, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
