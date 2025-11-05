@@ -75,7 +75,9 @@ namespace TarjetaSubeTest
         [Test]
         public void TestBoletoConMedioBoleto()
         {
-            Colectivo colectivo = new Colectivo("200");
+            TiempoFalso tiempoFalso = new TiempoFalso();
+            tiempoFalso.AgregarMinutos(360); // 6:00 AM - horario válido
+            Colectivo colectivo = new Colectivo("200", tiempoFalso);
             MedioBoleto tarjeta = new MedioBoleto();
             tarjeta.Cargar(2000);
 
@@ -130,7 +132,9 @@ namespace TarjetaSubeTest
         [Test]
         public void TestBoletoConFranquiciaCompleta()
         {
-            Colectivo colectivo = new Colectivo("202");
+            TiempoFalso tiempoFalso = new TiempoFalso();
+            tiempoFalso.AgregarMinutos(360); // 6:00 AM - horario válido
+            Colectivo colectivo = new Colectivo("202", tiempoFalso);
             FranquiciaCompleta tarjeta = new FranquiciaCompleta();
 
             Boleto boleto = colectivo.PagarCon(tarjeta);

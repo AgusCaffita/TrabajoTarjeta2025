@@ -1,0 +1,1458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<coverage line-rate="0.9056000000000001" branch-rate="0.8437" version="1.9" timestamp="1762305397" lines-covered="336" lines-valid="371" branches-covered="108" branches-valid="128">
+  <sources>
+    <source>C:\Users\agusc\desktop\mauri2\TrabajoTarjeta2025\TarjetaSube\</source>
+  </sources>
+  <packages>
+    <package name="TarjetaSube" line-rate="0.9056000000000001" branch-rate="0.8437" complexity="168">
+      <classes>
+        <class name="TarjetaSube.Boleto" filename="Boleto.cs" line-rate="1" branch-rate="1" complexity="10">
+          <methods>
+            <method name="get_TipoTarjeta" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="107" branch="False" />
+              </lines>
+            </method>
+            <method name="get_LineaColectivo" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="103" branch="False" />
+              </lines>
+            </method>
+            <method name="get_TotalAbonado" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="175" branch="False" />
+              </lines>
+            </method>
+            <method name="get_SaldoRestante" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="110" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Fecha" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="98" branch="False" />
+              </lines>
+            </method>
+            <method name="get_IdTarjeta" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="106" branch="False" />
+              </lines>
+            </method>
+            <method name="get_EsTrasbordo" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="99" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,System.String,System.Int32,System.Int32,System.Int32)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="4" branch="False" />
+                <line number="17" hits="4" branch="False" />
+                <line number="18" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,System.String,System.Int32,System.Int32,System.Int32,TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="4" branch="False" />
+                <line number="22" hits="4" branch="False" />
+                <line number="23" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,System.String,System.Int32,System.Int32,System.Int32,TarjetaSube.Tiempo,System.Boolean)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="25" hits="94" branch="False" />
+                <line number="26" hits="94" branch="False" />
+                <line number="27" hits="94" branch="False" />
+                <line number="28" hits="94" branch="False" />
+                <line number="29" hits="94" branch="False" />
+                <line number="30" hits="94" branch="False" />
+                <line number="31" hits="94" branch="False" />
+                <line number="32" hits="94" branch="False" />
+                <line number="33" hits="94" branch="False" />
+                <line number="34" hits="94" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="107" branch="False" />
+            <line number="8" hits="103" branch="False" />
+            <line number="9" hits="175" branch="False" />
+            <line number="10" hits="110" branch="False" />
+            <line number="11" hits="98" branch="False" />
+            <line number="12" hits="106" branch="False" />
+            <line number="13" hits="99" branch="False" />
+            <line number="16" hits="4" branch="False" />
+            <line number="17" hits="4" branch="False" />
+            <line number="18" hits="4" branch="False" />
+            <line number="21" hits="4" branch="False" />
+            <line number="22" hits="4" branch="False" />
+            <line number="23" hits="4" branch="False" />
+            <line number="25" hits="94" branch="False" />
+            <line number="26" hits="94" branch="False" />
+            <line number="27" hits="94" branch="False" />
+            <line number="28" hits="94" branch="False" />
+            <line number="29" hits="94" branch="False" />
+            <line number="30" hits="94" branch="False" />
+            <line number="31" hits="94" branch="False" />
+            <line number="32" hits="94" branch="False" />
+            <line number="33" hits="94" branch="False" />
+            <line number="34" hits="94" branch="False" />
+          </lines>
+        </class>
+        <class name="TarjetaSube.Colectivo" filename="Colectivo.cs" line-rate="0.9701000000000001" branch-rate="0.95" complexity="25">
+          <methods>
+            <method name="get_Linea" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="289" branch="False" />
+              </lines>
+            </method>
+            <method name="PagarCon" signature="(TarjetaSube.Tarjeta)" line-rate="0.9606999999999999" branch-rate="0.95" complexity="20">
+              <lines>
+                <line number="33" hits="96" branch="False" />
+                <line number="34" hits="96" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="9" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
+                <line number="39" hits="96" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="42" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="40" hits="3" branch="False" />
+                <line number="41" hits="3" branch="False" />
+                <line number="44" hits="93" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="59" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="46" hits="93" branch="False" />
+                <line number="47" hits="93" branch="False" />
+                <line number="48" hits="93" branch="False" />
+                <line number="49" hits="93" branch="False" />
+                <line number="52" hits="93" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="110" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="53" hits="2" branch="False" />
+                <line number="54" hits="2" branch="False" />
+                <line number="55" hits="2" branch="False" />
+                <line number="56" hits="2" branch="False" />
+                <line number="57" hits="2" branch="False" />
+                <line number="59" hits="91" branch="False" />
+                <line number="60" hits="91" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="144" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="61" hits="15" branch="False" />
+                <line number="62" hits="15" branch="False" />
+                <line number="63" hits="15" branch="False" />
+                <line number="64" hits="15" branch="False" />
+                <line number="65" hits="76" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="185" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="66" hits="20" branch="False" />
+                <line number="67" hits="20" branch="False" />
+                <line number="68" hits="20" branch="False" />
+                <line number="69" hits="20" branch="False" />
+                <line number="70" hits="56" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="232" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="71" hits="34" branch="False" />
+                <line number="72" hits="34" branch="False" />
+                <line number="73" hits="34" branch="False" />
+                <line number="74" hits="34" branch="False" />
+                <line number="76" hits="22" branch="False" />
+                <line number="77" hits="22" branch="False" />
+                <line number="78" hits="22" branch="False" />
+                <line number="79" hits="22" branch="False" />
+                <line number="80" hits="91" branch="False" />
+                <line number="82" hits="93" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="295" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="83" hits="3" branch="False" />
+                <line number="84" hits="3" branch="False" />
+                <line number="89" hits="90" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="305" type="jump" coverage="100%" />
+                    <condition number="318" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="90" hits="50" branch="False" />
+                <line number="91" hits="50" branch="False" />
+                <line number="92" hits="50" branch="False" />
+                <line number="94" hits="90" branch="False" />
+                <line number="96" hits="90" branch="False" />
+                <line number="99" hits="90" branch="False" />
+                <line number="102" hits="90" branch="False" />
+                <line number="103" hits="96" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="8" branch="False" />
+                <line number="14" hits="8" branch="False" />
+                <line number="15" hits="8" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="43" branch="False" />
+                <line number="18" hits="43" branch="False" />
+                <line number="19" hits="43" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,System.Boolean)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,System.Boolean,TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="25" hits="55" branch="False" />
+                <line number="26" hits="55" branch="False" />
+                <line number="27" hits="55" branch="False" />
+                <line number="28" hits="55" branch="False" />
+                <line number="29" hits="55" branch="False" />
+                <line number="30" hits="55" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="289" branch="False" />
+            <line number="33" hits="96" branch="False" />
+            <line number="34" hits="96" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="9" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
+            <line number="39" hits="96" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="42" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="40" hits="3" branch="False" />
+            <line number="41" hits="3" branch="False" />
+            <line number="44" hits="93" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="59" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="46" hits="93" branch="False" />
+            <line number="47" hits="93" branch="False" />
+            <line number="48" hits="93" branch="False" />
+            <line number="49" hits="93" branch="False" />
+            <line number="52" hits="93" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="110" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="53" hits="2" branch="False" />
+            <line number="54" hits="2" branch="False" />
+            <line number="55" hits="2" branch="False" />
+            <line number="56" hits="2" branch="False" />
+            <line number="57" hits="2" branch="False" />
+            <line number="59" hits="91" branch="False" />
+            <line number="60" hits="91" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="144" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="61" hits="15" branch="False" />
+            <line number="62" hits="15" branch="False" />
+            <line number="63" hits="15" branch="False" />
+            <line number="64" hits="15" branch="False" />
+            <line number="65" hits="76" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="185" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="66" hits="20" branch="False" />
+            <line number="67" hits="20" branch="False" />
+            <line number="68" hits="20" branch="False" />
+            <line number="69" hits="20" branch="False" />
+            <line number="70" hits="56" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="232" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="71" hits="34" branch="False" />
+            <line number="72" hits="34" branch="False" />
+            <line number="73" hits="34" branch="False" />
+            <line number="74" hits="34" branch="False" />
+            <line number="76" hits="22" branch="False" />
+            <line number="77" hits="22" branch="False" />
+            <line number="78" hits="22" branch="False" />
+            <line number="79" hits="22" branch="False" />
+            <line number="80" hits="91" branch="False" />
+            <line number="82" hits="93" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="295" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="83" hits="3" branch="False" />
+            <line number="84" hits="3" branch="False" />
+            <line number="89" hits="90" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="305" type="jump" coverage="100%" />
+                <condition number="318" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="90" hits="50" branch="False" />
+            <line number="91" hits="50" branch="False" />
+            <line number="92" hits="50" branch="False" />
+            <line number="94" hits="90" branch="False" />
+            <line number="96" hits="90" branch="False" />
+            <line number="99" hits="90" branch="False" />
+            <line number="102" hits="90" branch="False" />
+            <line number="103" hits="96" branch="False" />
+            <line number="13" hits="8" branch="False" />
+            <line number="14" hits="8" branch="False" />
+            <line number="15" hits="8" branch="False" />
+            <line number="17" hits="43" branch="False" />
+            <line number="18" hits="43" branch="False" />
+            <line number="19" hits="43" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="25" hits="55" branch="False" />
+            <line number="26" hits="55" branch="False" />
+            <line number="27" hits="55" branch="False" />
+            <line number="28" hits="55" branch="False" />
+            <line number="29" hits="55" branch="False" />
+            <line number="30" hits="55" branch="False" />
+          </lines>
+        </class>
+        <class name="TarjetaSube.Program" filename="Program.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Main" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="TarjetaSube.Tarjeta" filename="Tarjeta.cs" line-rate="0.9819" branch-rate="0.9736" complexity="47">
+          <methods>
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="203" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Saldo" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_SaldoPendiente" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="25" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name="ObtenerSaldo" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="40" hits="250" branch="False" />
+                <line number="41" hits="250" branch="False" />
+                <line number="42" hits="250" branch="False" />
+              </lines>
+            </method>
+            <method name="Cargar" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="8">
+              <lines>
+                <line number="45" hits="71" branch="False" />
+                <line number="46" hits="71" branch="False" />
+                <line number="47" hits="1002" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="46" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="48" hits="429" branch="False" />
+                <line number="49" hits="429" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="30" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="50" hits="69" branch="False" />
+                <line number="51" hits="69" branch="False" />
+                <line number="52" hits="69" branch="False" />
+                <line number="54" hits="360" branch="False" />
+                <line number="56" hits="73" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="56" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="58" hits="69" branch="False" />
+                <line number="60" hits="69" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="84" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="61" hits="11" branch="False" />
+                <line number="62" hits="11" branch="False" />
+                <line number="63" hits="11" branch="False" />
+                <line number="64" hits="11" branch="False" />
+                <line number="66" hits="58" branch="False" />
+                <line number="67" hits="58" branch="False" />
+                <line number="68" hits="58" branch="False" />
+                <line number="70" hits="69" branch="False" />
+                <line number="71" hits="71" branch="False" />
+              </lines>
+            </method>
+            <method name="AcreditarCarga" signature="()" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="74" hits="71" branch="False" />
+                <line number="75" hits="71" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="8" type="jump" coverage="100%" />
+                    <condition number="28" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="76" hits="11" branch="False" />
+                <line number="77" hits="11" branch="False" />
+                <line number="78" hits="11" branch="False" />
+                <line number="80" hits="11" branch="False" />
+                <line number="81" hits="11" branch="False" />
+                <line number="82" hits="11" branch="False" />
+                <line number="83" hits="71" branch="False" />
+              </lines>
+            </method>
+            <method name="Descontar" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="86" hits="42" branch="False" />
+                <line number="87" hits="42" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="18" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="88" hits="2" branch="False" />
+                <line number="89" hits="2" branch="False" />
+                <line number="92" hits="40" branch="False" />
+                <line number="93" hits="40" branch="False" />
+                <line number="94" hits="40" branch="False" />
+                <line number="95" hits="42" branch="False" />
+              </lines>
+            </method>
+            <method name="ObtenerDescuento" signature="(TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="10">
+              <lines>
+                <line number="98" hits="22" branch="False" />
+                <line number="99" hits="22" branch="False" />
+                <line number="101" hits="22" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="28" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="102" hits="14" branch="False" />
+                <line number="103" hits="14" branch="False" />
+                <line number="104" hits="14" branch="False" />
+                <line number="105" hits="14" branch="False" />
+                <line number="107" hits="22" branch="False" />
+                <line number="109" hits="22" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="64" type="jump" coverage="100%" />
+                    <condition number="79" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="110" hits="1" branch="False" />
+                <line number="111" hits="21" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="97" type="jump" coverage="100%" />
+                    <condition number="114" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="112" hits="1" branch="False" />
+                <line number="114" hits="20" branch="False" />
+                <line number="115" hits="22" branch="False" />
+              </lines>
+            </method>
+            <method name="CalcularTarifaConDescuento" signature="(System.Int32,TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="118" hits="22" branch="False" />
+                <line number="119" hits="22" branch="False" />
+                <line number="120" hits="22" branch="False" />
+                <line number="121" hits="22" branch="False" />
+                <line number="122" hits="22" branch="False" />
+              </lines>
+            </method>
+            <method name="ObtenerCantidadViajesMes" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="125" hits="1" branch="False" />
+                <line number="126" hits="1" branch="False" />
+                <line number="127" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="PuedeViajar" signature="(TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="130" hits="23" branch="False" />
+                <line number="131" hits="23" branch="False" />
+                <line number="132" hits="23" branch="False" />
+              </lines>
+            </method>
+            <method name="RegistrarViaje" signature="(TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="135" hits="317" branch="False" />
+                <line number="136" hits="317" branch="False" />
+                <line number="138" hits="317" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="28" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="139" hits="28" branch="False" />
+                <line number="140" hits="28" branch="False" />
+                <line number="141" hits="28" branch="False" />
+                <line number="142" hits="28" branch="False" />
+                <line number="144" hits="317" branch="False" />
+                <line number="145" hits="317" branch="False" />
+              </lines>
+            </method>
+            <method name="PuedeHacerTrasbordo" signature="(System.String,TarjetaSube.Tiempo)" line-rate="0.9333" branch-rate="0.9166" complexity="12">
+              <lines>
+                <line number="150" hits="93" branch="False" />
+                <line number="151" hits="93" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="17" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="152" hits="73" branch="False" />
+                <line number="154" hits="20" branch="False" />
+                <line number="157" hits="20" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="47" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="158" hits="0" branch="False" />
+                <line number="159" hits="20" branch="False" />
+                <line number="160" hits="20" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="84" type="jump" coverage="100%" />
+                    <condition number="113" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="161" hits="16" branch="False" />
+                <line number="164" hits="4" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="136" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="165" hits="1" branch="False" />
+                <line number="168" hits="3" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="181" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="169" hits="2" branch="False" />
+                <line number="171" hits="1" branch="False" />
+                <line number="172" hits="93" branch="False" />
+              </lines>
+            </method>
+            <method name="RegistrarPagoParaTrasbordo" signature="(System.String,TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="175" hits="50" branch="False" />
+                <line number="176" hits="50" branch="False" />
+                <line number="177" hits="50" branch="False" />
+                <line number="178" hits="50" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="88" branch="False" />
+                <line number="17" hits="88" branch="False" />
+                <line number="18" hits="88" branch="False" />
+                <line number="27" hits="88" branch="False" />
+                <line number="28" hits="88" branch="False" />
+                <line number="29" hits="88" branch="False" />
+                <line number="30" hits="88" branch="False" />
+                <line number="31" hits="88" branch="False" />
+                <line number="32" hits="88" branch="False" />
+                <line number="33" hits="88" branch="False" />
+                <line number="34" hits="88" branch="False" />
+                <line number="35" hits="88" branch="False" />
+                <line number="36" hits="88" branch="False" />
+                <line number="37" hits="88" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="203" branch="False" />
+            <line number="24" hits="0" branch="False" />
+            <line number="25" hits="5" branch="False" />
+            <line number="40" hits="250" branch="False" />
+            <line number="41" hits="250" branch="False" />
+            <line number="42" hits="250" branch="False" />
+            <line number="45" hits="71" branch="False" />
+            <line number="46" hits="71" branch="False" />
+            <line number="47" hits="1002" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="46" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="48" hits="429" branch="False" />
+            <line number="49" hits="429" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="30" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="50" hits="69" branch="False" />
+            <line number="51" hits="69" branch="False" />
+            <line number="52" hits="69" branch="False" />
+            <line number="54" hits="360" branch="False" />
+            <line number="56" hits="73" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="56" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="58" hits="69" branch="False" />
+            <line number="60" hits="69" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="84" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="61" hits="11" branch="False" />
+            <line number="62" hits="11" branch="False" />
+            <line number="63" hits="11" branch="False" />
+            <line number="64" hits="11" branch="False" />
+            <line number="66" hits="58" branch="False" />
+            <line number="67" hits="58" branch="False" />
+            <line number="68" hits="58" branch="False" />
+            <line number="70" hits="69" branch="False" />
+            <line number="71" hits="71" branch="False" />
+            <line number="74" hits="71" branch="False" />
+            <line number="75" hits="71" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="8" type="jump" coverage="100%" />
+                <condition number="28" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="76" hits="11" branch="False" />
+            <line number="77" hits="11" branch="False" />
+            <line number="78" hits="11" branch="False" />
+            <line number="80" hits="11" branch="False" />
+            <line number="81" hits="11" branch="False" />
+            <line number="82" hits="11" branch="False" />
+            <line number="83" hits="71" branch="False" />
+            <line number="86" hits="42" branch="False" />
+            <line number="87" hits="42" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="18" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="88" hits="2" branch="False" />
+            <line number="89" hits="2" branch="False" />
+            <line number="92" hits="40" branch="False" />
+            <line number="93" hits="40" branch="False" />
+            <line number="94" hits="40" branch="False" />
+            <line number="95" hits="42" branch="False" />
+            <line number="98" hits="22" branch="False" />
+            <line number="99" hits="22" branch="False" />
+            <line number="101" hits="22" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="28" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="102" hits="14" branch="False" />
+            <line number="103" hits="14" branch="False" />
+            <line number="104" hits="14" branch="False" />
+            <line number="105" hits="14" branch="False" />
+            <line number="107" hits="22" branch="False" />
+            <line number="109" hits="22" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="64" type="jump" coverage="100%" />
+                <condition number="79" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="110" hits="1" branch="False" />
+            <line number="111" hits="21" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="97" type="jump" coverage="100%" />
+                <condition number="114" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="112" hits="1" branch="False" />
+            <line number="114" hits="20" branch="False" />
+            <line number="115" hits="22" branch="False" />
+            <line number="118" hits="22" branch="False" />
+            <line number="119" hits="22" branch="False" />
+            <line number="120" hits="22" branch="False" />
+            <line number="121" hits="22" branch="False" />
+            <line number="122" hits="22" branch="False" />
+            <line number="125" hits="1" branch="False" />
+            <line number="126" hits="1" branch="False" />
+            <line number="127" hits="1" branch="False" />
+            <line number="130" hits="23" branch="False" />
+            <line number="131" hits="23" branch="False" />
+            <line number="132" hits="23" branch="False" />
+            <line number="135" hits="317" branch="False" />
+            <line number="136" hits="317" branch="False" />
+            <line number="138" hits="317" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="28" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="139" hits="28" branch="False" />
+            <line number="140" hits="28" branch="False" />
+            <line number="141" hits="28" branch="False" />
+            <line number="142" hits="28" branch="False" />
+            <line number="144" hits="317" branch="False" />
+            <line number="145" hits="317" branch="False" />
+            <line number="150" hits="93" branch="False" />
+            <line number="151" hits="93" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="17" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="152" hits="73" branch="False" />
+            <line number="154" hits="20" branch="False" />
+            <line number="157" hits="20" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="47" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="158" hits="0" branch="False" />
+            <line number="159" hits="20" branch="False" />
+            <line number="160" hits="20" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="84" type="jump" coverage="100%" />
+                <condition number="113" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="161" hits="16" branch="False" />
+            <line number="164" hits="4" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="136" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="165" hits="1" branch="False" />
+            <line number="168" hits="3" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="181" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="169" hits="2" branch="False" />
+            <line number="171" hits="1" branch="False" />
+            <line number="172" hits="93" branch="False" />
+            <line number="175" hits="50" branch="False" />
+            <line number="176" hits="50" branch="False" />
+            <line number="177" hits="50" branch="False" />
+            <line number="178" hits="50" branch="False" />
+            <line number="12" hits="88" branch="False" />
+            <line number="17" hits="88" branch="False" />
+            <line number="18" hits="88" branch="False" />
+            <line number="27" hits="88" branch="False" />
+            <line number="28" hits="88" branch="False" />
+            <line number="29" hits="88" branch="False" />
+            <line number="30" hits="88" branch="False" />
+            <line number="31" hits="88" branch="False" />
+            <line number="32" hits="88" branch="False" />
+            <line number="33" hits="88" branch="False" />
+            <line number="34" hits="88" branch="False" />
+            <line number="35" hits="88" branch="False" />
+            <line number="36" hits="88" branch="False" />
+            <line number="37" hits="88" branch="False" />
+          </lines>
+        </class>
+        <class name="TarjetaSube.MedioBoleto" filename="Tarjeta.cs" line-rate="0.8214" branch-rate="0.6923" complexity="28">
+          <methods>
+            <method name="Descontar" signature="(System.Int32)" line-rate="1" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="190" hits="15" branch="False" />
+                <line number="191" hits="15" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="18" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="192" hits="15" branch="False" />
+                <line number="193" hits="15" branch="False" />
+                <line number="194" hits="15" branch="False" />
+                <line number="195" hits="15" branch="False" />
+              </lines>
+            </method>
+            <method name="EstaEnHorarioFranquicia" signature="(TarjetaSube.Tiempo)" line-rate="0.7777" branch-rate="0.5" complexity="8">
+              <lines>
+                <line number="198" hits="18" branch="False" />
+                <line number="199" hits="18" branch="False" />
+                <line number="200" hits="18" branch="True" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="16" type="jump" coverage="50%" />
+                    <condition number="33" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="201" hits="0" branch="False" />
+                <line number="202" hits="18" branch="False" />
+                <line number="203" hits="18" branch="True" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="67" type="jump" coverage="50%" />
+                    <condition number="96" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="204" hits="0" branch="False" />
+                <line number="205" hits="18" branch="False" />
+                <line number="206" hits="18" branch="False" />
+              </lines>
+            </method>
+            <method name="PuedeViajar" signature="(TarjetaSube.Tiempo)" line-rate="0.9444" branch-rate="0.9" complexity="10">
+              <lines>
+                <line number="209" hits="18" branch="False" />
+                <line number="210" hits="18" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="13" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="211" hits="0" branch="False" />
+                <line number="213" hits="18" branch="False" />
+                <line number="215" hits="18" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="42" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="216" hits="9" branch="False" />
+                <line number="217" hits="9" branch="False" />
+                <line number="218" hits="9" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="86" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="219" hits="2" branch="False" />
+                <line number="220" hits="2" branch="False" />
+                <line number="222" hits="7" branch="False" />
+                <line number="224" hits="16" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="105" type="jump" coverage="100%" />
+                    <condition number="146" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="225" hits="10" branch="False" />
+                <line number="226" hits="10" branch="False" />
+                <line number="227" hits="10" branch="False" />
+                <line number="228" hits="10" branch="False" />
+                <line number="230" hits="16" branch="False" />
+                <line number="231" hits="18" branch="False" />
+              </lines>
+            </method>
+            <method name="RegistrarViaje" signature="(TarjetaSube.Tiempo)" line-rate="0.6" branch-rate="0.5" complexity="4">
+              <lines>
+                <line number="234" hits="16" branch="False" />
+                <line number="235" hits="16" branch="False" />
+                <line number="236" hits="16" branch="False" />
+                <line number="238" hits="16" branch="True" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="31" type="jump" coverage="50%" />
+                    <condition number="69" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="239" hits="0" branch="False" />
+                <line number="240" hits="0" branch="False" />
+                <line number="241" hits="0" branch="False" />
+                <line number="242" hits="0" branch="False" />
+                <line number="244" hits="16" branch="False" />
+                <line number="245" hits="16" branch="False" />
+              </lines>
+            </method>
+            <method name="ObtenerTarifaActual" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="248" hits="30" branch="False" />
+                <line number="249" hits="30" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="15" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="250" hits="4" branch="False" />
+                <line number="251" hits="4" branch="False" />
+                <line number="253" hits="26" branch="False" />
+                <line number="254" hits="30" branch="False" />
+              </lines>
+            </method>
+            <method name="DescontarSegunViajes" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="257" hits="15" branch="False" />
+                <line number="258" hits="15" branch="False" />
+                <line number="259" hits="15" branch="False" />
+                <line number="260" hits="15" branch="False" />
+              </lines>
+            </method>
+            <method name="CalcularTarifaConDescuento" signature="(System.Int32,TarjetaSube.Tiempo)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="263" hits="0" branch="False" />
+                <line number="264" hits="0" branch="False" />
+                <line number="265" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="190" hits="15" branch="False" />
+            <line number="191" hits="15" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="18" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="192" hits="15" branch="False" />
+            <line number="193" hits="15" branch="False" />
+            <line number="194" hits="15" branch="False" />
+            <line number="195" hits="15" branch="False" />
+            <line number="198" hits="18" branch="False" />
+            <line number="199" hits="18" branch="False" />
+            <line number="200" hits="18" branch="True" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="16" type="jump" coverage="50%" />
+                <condition number="33" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="201" hits="0" branch="False" />
+            <line number="202" hits="18" branch="False" />
+            <line number="203" hits="18" branch="True" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="67" type="jump" coverage="50%" />
+                <condition number="96" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="204" hits="0" branch="False" />
+            <line number="205" hits="18" branch="False" />
+            <line number="206" hits="18" branch="False" />
+            <line number="209" hits="18" branch="False" />
+            <line number="210" hits="18" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="13" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="211" hits="0" branch="False" />
+            <line number="213" hits="18" branch="False" />
+            <line number="215" hits="18" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="42" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="216" hits="9" branch="False" />
+            <line number="217" hits="9" branch="False" />
+            <line number="218" hits="9" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="86" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="219" hits="2" branch="False" />
+            <line number="220" hits="2" branch="False" />
+            <line number="222" hits="7" branch="False" />
+            <line number="224" hits="16" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="105" type="jump" coverage="100%" />
+                <condition number="146" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="225" hits="10" branch="False" />
+            <line number="226" hits="10" branch="False" />
+            <line number="227" hits="10" branch="False" />
+            <line number="228" hits="10" branch="False" />
+            <line number="230" hits="16" branch="False" />
+            <line number="231" hits="18" branch="False" />
+            <line number="234" hits="16" branch="False" />
+            <line number="235" hits="16" branch="False" />
+            <line number="236" hits="16" branch="False" />
+            <line number="238" hits="16" branch="True" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="31" type="jump" coverage="50%" />
+                <condition number="69" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="239" hits="0" branch="False" />
+            <line number="240" hits="0" branch="False" />
+            <line number="241" hits="0" branch="False" />
+            <line number="242" hits="0" branch="False" />
+            <line number="244" hits="16" branch="False" />
+            <line number="245" hits="16" branch="False" />
+            <line number="248" hits="30" branch="False" />
+            <line number="249" hits="30" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="15" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="250" hits="4" branch="False" />
+            <line number="251" hits="4" branch="False" />
+            <line number="253" hits="26" branch="False" />
+            <line number="254" hits="30" branch="False" />
+            <line number="257" hits="15" branch="False" />
+            <line number="258" hits="15" branch="False" />
+            <line number="259" hits="15" branch="False" />
+            <line number="260" hits="15" branch="False" />
+            <line number="263" hits="0" branch="False" />
+            <line number="264" hits="0" branch="False" />
+            <line number="265" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="TarjetaSube.BoletoGratuito" filename="Tarjeta.cs" line-rate="0.7916" branch-rate="0.7272" complexity="26">
+          <methods>
+            <method name="Descontar" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="274" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="RegistrarViaje" signature="(TarjetaSube.Tiempo)" line-rate="0.6" branch-rate="0.5" complexity="4">
+              <lines>
+                <line number="277" hits="21" branch="False" />
+                <line number="278" hits="21" branch="False" />
+                <line number="280" hits="21" branch="True" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="19" type="jump" coverage="50%" />
+                    <condition number="57" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="281" hits="0" branch="False" />
+                <line number="282" hits="0" branch="False" />
+                <line number="283" hits="0" branch="False" />
+                <line number="284" hits="0" branch="False" />
+                <line number="286" hits="21" branch="False" />
+                <line number="287" hits="21" branch="False" />
+                <line number="288" hits="21" branch="False" />
+              </lines>
+            </method>
+            <method name="EstaEnHorarioFranquicia" signature="(TarjetaSube.Tiempo)" line-rate="0.7777" branch-rate="0.5" complexity="8">
+              <lines>
+                <line number="291" hits="20" branch="False" />
+                <line number="292" hits="20" branch="False" />
+                <line number="293" hits="20" branch="True" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="16" type="jump" coverage="50%" />
+                    <condition number="33" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="294" hits="0" branch="False" />
+                <line number="295" hits="20" branch="False" />
+                <line number="296" hits="20" branch="True" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="67" type="jump" coverage="50%" />
+                    <condition number="96" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="297" hits="0" branch="False" />
+                <line number="298" hits="20" branch="False" />
+                <line number="299" hits="20" branch="False" />
+              </lines>
+            </method>
+            <method name="PuedeViajar" signature="(TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="302" hits="20" branch="False" />
+                <line number="303" hits="20" branch="False" />
+                <line number="304" hits="20" branch="False" />
+              </lines>
+            </method>
+            <method name="ObtenerTarifaActual" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="307" hits="44" branch="False" />
+                <line number="308" hits="44" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="8" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="309" hits="44" branch="False" />
+              </lines>
+            </method>
+            <method name="DescontarSegunViajes" signature="(System.Int32,TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="8">
+              <lines>
+                <line number="312" hits="24" branch="False" />
+                <line number="313" hits="24" branch="False" />
+                <line number="315" hits="24" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="19" type="jump" coverage="100%" />
+                    <condition number="57" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="316" hits="11" branch="False" />
+                <line number="317" hits="11" branch="False" />
+                <line number="318" hits="11" branch="False" />
+                <line number="319" hits="11" branch="False" />
+                <line number="321" hits="24" branch="False" />
+                <line number="323" hits="24" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="96" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="324" hits="17" branch="False" />
+                <line number="326" hits="7" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="122" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="327" hits="1" branch="False" />
+                <line number="329" hits="6" branch="False" />
+                <line number="330" hits="6" branch="False" />
+                <line number="331" hits="6" branch="False" />
+                <line number="332" hits="24" branch="False" />
+              </lines>
+            </method>
+            <method name="DescontarSegunViajes" signature="(TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="335" hits="4" branch="False" />
+                <line number="336" hits="4" branch="False" />
+                <line number="337" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name="CalcularTarifaConDescuento" signature="(System.Int32,TarjetaSube.Tiempo)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="340" hits="0" branch="False" />
+                <line number="341" hits="0" branch="False" />
+                <line number="342" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="274" hits="0" branch="False" />
+            <line number="277" hits="21" branch="False" />
+            <line number="278" hits="21" branch="False" />
+            <line number="280" hits="21" branch="True" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="19" type="jump" coverage="50%" />
+                <condition number="57" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="281" hits="0" branch="False" />
+            <line number="282" hits="0" branch="False" />
+            <line number="283" hits="0" branch="False" />
+            <line number="284" hits="0" branch="False" />
+            <line number="286" hits="21" branch="False" />
+            <line number="287" hits="21" branch="False" />
+            <line number="288" hits="21" branch="False" />
+            <line number="291" hits="20" branch="False" />
+            <line number="292" hits="20" branch="False" />
+            <line number="293" hits="20" branch="True" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="16" type="jump" coverage="50%" />
+                <condition number="33" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="294" hits="0" branch="False" />
+            <line number="295" hits="20" branch="False" />
+            <line number="296" hits="20" branch="True" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="67" type="jump" coverage="50%" />
+                <condition number="96" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="297" hits="0" branch="False" />
+            <line number="298" hits="20" branch="False" />
+            <line number="299" hits="20" branch="False" />
+            <line number="302" hits="20" branch="False" />
+            <line number="303" hits="20" branch="False" />
+            <line number="304" hits="20" branch="False" />
+            <line number="307" hits="44" branch="False" />
+            <line number="308" hits="44" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="8" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="309" hits="44" branch="False" />
+            <line number="312" hits="24" branch="False" />
+            <line number="313" hits="24" branch="False" />
+            <line number="315" hits="24" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="19" type="jump" coverage="100%" />
+                <condition number="57" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="316" hits="11" branch="False" />
+            <line number="317" hits="11" branch="False" />
+            <line number="318" hits="11" branch="False" />
+            <line number="319" hits="11" branch="False" />
+            <line number="321" hits="24" branch="False" />
+            <line number="323" hits="24" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="96" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="324" hits="17" branch="False" />
+            <line number="326" hits="7" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="122" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="327" hits="1" branch="False" />
+            <line number="329" hits="6" branch="False" />
+            <line number="330" hits="6" branch="False" />
+            <line number="331" hits="6" branch="False" />
+            <line number="332" hits="24" branch="False" />
+            <line number="335" hits="4" branch="False" />
+            <line number="336" hits="4" branch="False" />
+            <line number="337" hits="4" branch="False" />
+            <line number="340" hits="0" branch="False" />
+            <line number="341" hits="0" branch="False" />
+            <line number="342" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="TarjetaSube.FranquiciaCompleta" filename="Tarjeta.cs" line-rate="0.8" branch-rate="0.8181" complexity="25">
+          <methods>
+            <method name="Descontar" signature="(System.Int32)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="351" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="RegistrarViaje" signature="(TarjetaSube.Tiempo)" line-rate="0.6" branch-rate="0.5" complexity="4">
+              <lines>
+                <line number="354" hits="33" branch="False" />
+                <line number="355" hits="33" branch="False" />
+                <line number="357" hits="33" branch="True" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="19" type="jump" coverage="50%" />
+                    <condition number="57" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="358" hits="0" branch="False" />
+                <line number="359" hits="0" branch="False" />
+                <line number="360" hits="0" branch="False" />
+                <line number="361" hits="0" branch="False" />
+                <line number="363" hits="33" branch="False" />
+                <line number="364" hits="33" branch="False" />
+                <line number="365" hits="33" branch="False" />
+              </lines>
+            </method>
+            <method name="EstaEnHorarioFranquicia" signature="(TarjetaSube.Tiempo)" line-rate="0.8887999999999999" branch-rate="0.75" complexity="8">
+              <lines>
+                <line number="368" hits="35" branch="False" />
+                <line number="369" hits="35" branch="False" />
+                <line number="370" hits="35" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="16" type="jump" coverage="100%" />
+                    <condition number="33" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="371" hits="1" branch="False" />
+                <line number="372" hits="34" branch="False" />
+                <line number="373" hits="34" branch="True" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="67" type="jump" coverage="50%" />
+                    <condition number="96" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="374" hits="0" branch="False" />
+                <line number="375" hits="34" branch="False" />
+                <line number="376" hits="35" branch="False" />
+              </lines>
+            </method>
+            <method name="PuedeViajar" signature="(TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="379" hits="35" branch="False" />
+                <line number="380" hits="35" branch="False" />
+                <line number="381" hits="35" branch="False" />
+              </lines>
+            </method>
+            <method name="ObtenerTarifaActual" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="384" hits="68" branch="False" />
+                <line number="385" hits="68" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="8" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="386" hits="68" branch="False" />
+              </lines>
+            </method>
+            <method name="DescontarSegunViajes" signature="(System.Int32,TarjetaSube.Tiempo)" line-rate="1" branch-rate="1" complexity="8">
+              <lines>
+                <line number="388" hits="34" branch="False" />
+                <line number="389" hits="34" branch="False" />
+                <line number="391" hits="34" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="19" type="jump" coverage="100%" />
+                    <condition number="57" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="392" hits="15" branch="False" />
+                <line number="393" hits="15" branch="False" />
+                <line number="394" hits="15" branch="False" />
+                <line number="395" hits="15" branch="False" />
+                <line number="397" hits="34" branch="False" />
+                <line number="399" hits="34" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="96" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="400" hits="24" branch="False" />
+                <line number="402" hits="10" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="122" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="403" hits="1" branch="False" />
+                <line number="405" hits="9" branch="False" />
+                <line number="406" hits="9" branch="False" />
+                <line number="407" hits="9" branch="False" />
+                <line number="408" hits="34" branch="False" />
+              </lines>
+            </method>
+            <method name="CalcularTarifaConDescuento" signature="(System.Int32,TarjetaSube.Tiempo)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="411" hits="0" branch="False" />
+                <line number="412" hits="0" branch="False" />
+                <line number="413" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="351" hits="0" branch="False" />
+            <line number="354" hits="33" branch="False" />
+            <line number="355" hits="33" branch="False" />
+            <line number="357" hits="33" branch="True" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="19" type="jump" coverage="50%" />
+                <condition number="57" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="358" hits="0" branch="False" />
+            <line number="359" hits="0" branch="False" />
+            <line number="360" hits="0" branch="False" />
+            <line number="361" hits="0" branch="False" />
+            <line number="363" hits="33" branch="False" />
+            <line number="364" hits="33" branch="False" />
+            <line number="365" hits="33" branch="False" />
+            <line number="368" hits="35" branch="False" />
+            <line number="369" hits="35" branch="False" />
+            <line number="370" hits="35" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="16" type="jump" coverage="100%" />
+                <condition number="33" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="371" hits="1" branch="False" />
+            <line number="372" hits="34" branch="False" />
+            <line number="373" hits="34" branch="True" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="67" type="jump" coverage="50%" />
+                <condition number="96" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="374" hits="0" branch="False" />
+            <line number="375" hits="34" branch="False" />
+            <line number="376" hits="35" branch="False" />
+            <line number="379" hits="35" branch="False" />
+            <line number="380" hits="35" branch="False" />
+            <line number="381" hits="35" branch="False" />
+            <line number="384" hits="68" branch="False" />
+            <line number="385" hits="68" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="8" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="386" hits="68" branch="False" />
+            <line number="388" hits="34" branch="False" />
+            <line number="389" hits="34" branch="False" />
+            <line number="391" hits="34" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="19" type="jump" coverage="100%" />
+                <condition number="57" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="392" hits="15" branch="False" />
+            <line number="393" hits="15" branch="False" />
+            <line number="394" hits="15" branch="False" />
+            <line number="395" hits="15" branch="False" />
+            <line number="397" hits="34" branch="False" />
+            <line number="399" hits="34" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="96" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="400" hits="24" branch="False" />
+            <line number="402" hits="10" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="122" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="403" hits="1" branch="False" />
+            <line number="405" hits="9" branch="False" />
+            <line number="406" hits="9" branch="False" />
+            <line number="407" hits="9" branch="False" />
+            <line number="408" hits="34" branch="False" />
+            <line number="411" hits="0" branch="False" />
+            <line number="412" hits="0" branch="False" />
+            <line number="413" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="TarjetaSube.Tiempo" filename="Tiempo.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="Now" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="39" branch="False" />
+                <line number="13" hits="39" branch="False" />
+                <line number="14" hits="39" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="63" branch="False" />
+                <line number="8" hits="63" branch="False" />
+                <line number="9" hits="63" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="39" branch="False" />
+            <line number="13" hits="39" branch="False" />
+            <line number="14" hits="39" branch="False" />
+            <line number="7" hits="63" branch="False" />
+            <line number="8" hits="63" branch="False" />
+            <line number="9" hits="63" branch="False" />
+          </lines>
+        </class>
+        <class name="TarjetaSube.TiempoFalso" filename="TiempoFalso.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="Now" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="689" branch="False" />
+                <line number="16" hits="689" branch="False" />
+                <line number="17" hits="689" branch="False" />
+              </lines>
+            </method>
+            <method name="AgregarDias" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="8" branch="False" />
+                <line number="21" hits="8" branch="False" />
+                <line number="22" hits="8" branch="False" />
+              </lines>
+            </method>
+            <method name="AgregarMinutos" signature="(System.Int32)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="25" hits="51" branch="False" />
+                <line number="26" hits="51" branch="False" />
+                <line number="27" hits="51" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="49" branch="False" />
+                <line number="10" hits="49" branch="False" />
+                <line number="11" hits="49" branch="False" />
+                <line number="12" hits="49" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="689" branch="False" />
+            <line number="16" hits="689" branch="False" />
+            <line number="17" hits="689" branch="False" />
+            <line number="20" hits="8" branch="False" />
+            <line number="21" hits="8" branch="False" />
+            <line number="22" hits="8" branch="False" />
+            <line number="25" hits="51" branch="False" />
+            <line number="26" hits="51" branch="False" />
+            <line number="27" hits="51" branch="False" />
+            <line number="9" hits="49" branch="False" />
+            <line number="10" hits="49" branch="False" />
+            <line number="11" hits="49" branch="False" />
+            <line number="12" hits="49" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

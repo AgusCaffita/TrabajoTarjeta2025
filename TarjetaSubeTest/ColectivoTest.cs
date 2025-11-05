@@ -280,7 +280,9 @@ namespace TarjetaSubeTest
         [Test]
         public void TestPagarConFranquiciaCompleta()
         {
-            Colectivo colectivo = new Colectivo("202");
+            TiempoFalso tiempoFalso = new TiempoFalso();
+            tiempoFalso.AgregarMinutos(360); // 6:00 AM - horario válido
+            Colectivo colectivo = new Colectivo("202", tiempoFalso);
             FranquiciaCompleta tarjeta = new FranquiciaCompleta();
 
             Boleto boleto = colectivo.PagarCon(tarjeta);
