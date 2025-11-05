@@ -17,6 +17,10 @@ namespace TarjetaSube
         private int viajesDelMes = 0;
         private int mesActual = -1;
 
+        // Nuevos campos para trasbordos
+        private DateTime? ultimaPagoConMonto;
+        private string ultimaLineaPago;
+
         public int Saldo => saldo;
         public int SaldoPendiente => saldoPendiente;
 
@@ -28,6 +32,8 @@ namespace TarjetaSube
             saldoPendiente = 0;
             mesActual = -1;
             viajesDelMes = 0;
+            ultimaPagoConMonto = null;
+            ultimaLineaPago = null;
         }
 
         public int ObtenerSaldo()
@@ -136,6 +142,39 @@ namespace TarjetaSube
             }
 
             viajesDelMes++;
+        }
+
+        // Nuevos métodos para trasbordos
+
+        public virtual bool PuedeHacerTrasbordo(string linea, Tiempo tiempo)
+        {
+            if (!ultimaPagoConMonto.HasValue)
+                return false;
+
+            DateTime ahora = tiempo.Now();
+
+            // Solo lunes a sábado (domingo no), de 7:00 a 22:00
+            if (ahora.DayOfWeek == DayOfWeek.Sunday)
+                return false;
+            var hora = ahora.TimeOfDay;
+            if (hora < TimeSpan.FromHours(7) || hora >= TimeSpan.FromHours(22))
+                return false;
+
+            // Debe ser entre líneas distintas
+            if (string.Equals(linea, ultimaLineaPago, StringComparison.Ordinal))
+                return false;
+
+            // Dentro de la ventana de 1 hora desde el último pago con monto
+            if (ahora <= ultimaPagoConMonto.Value.AddHours(1))
+                return true;
+
+            return false;
+        }
+
+        public virtual void RegistrarPagoParaTrasbordo(string linea, Tiempo tiempo)
+        {
+            ultimaPagoConMonto = tiempo.Now();
+            ultimaLineaPago = linea;
         }
     }
 
