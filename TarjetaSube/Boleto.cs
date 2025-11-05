@@ -10,6 +10,7 @@ namespace TarjetaSube
         public int SaldoRestante { get; private set; }
         public DateTime Fecha { get; private set; }
         public int IdTarjeta { get; private set; }
+        public bool EsTrasbordo { get; private set; }
 
         public Boleto(string tipoTarjeta, string lineaColectivo, int totalAbonado, int saldoRestante, int idTarjeta)
             : this(tipoTarjeta, lineaColectivo, totalAbonado, saldoRestante, idTarjeta, new Tiempo())
@@ -17,6 +18,11 @@ namespace TarjetaSube
         }
 
         public Boleto(string tipoTarjeta, string lineaColectivo, int totalAbonado, int saldoRestante, int idTarjeta, Tiempo tiempo)
+            : this(tipoTarjeta, lineaColectivo, totalAbonado, saldoRestante, idTarjeta, tiempo, false)
+        {
+        }
+
+        public Boleto(string tipoTarjeta, string lineaColectivo, int totalAbonado, int saldoRestante, int idTarjeta, Tiempo tiempo, bool esTrasbordo)
         {
             TipoTarjeta = tipoTarjeta;
             LineaColectivo = lineaColectivo;
@@ -24,6 +30,7 @@ namespace TarjetaSube
             SaldoRestante = saldoRestante;
             Fecha = tiempo.Now();
             IdTarjeta = idTarjeta;
+            EsTrasbordo = esTrasbordo;
         }
     }
 }

@@ -403,5 +403,114 @@ namespace TarjetaSubeTest
             Assert.AreEqual(0, boleto.TotalAbonado);
             Assert.AreEqual(0, boleto.SaldoRestante);
         }
+
+        [Test]
+        public void TestTrasbordoValido()
+        {
+            TiempoFalso tiempo = new TiempoFalso();
+            tiempo.AgregarMinutos(480); // 08:00, lunes
+            Colectivo lineaA = new Colectivo("A", tiempo);
+            Colectivo lineaB = new Colectivo("B", tiempo);
+            Tarjeta tarjeta = new Tarjeta();
+            tarjeta.Cargar(5000);
+
+            Boleto primerBoleto = lineaA.PagarCon(tarjeta);
+            Assert.IsNotNull(primerBoleto);
+            Assert.AreEqual(1580, primerBoleto.TotalAbonado);
+
+            tiempo.AgregarMinutos(30); // dentro de la ventana de 1 hora
+            Boleto segundoBoleto = lineaB.PagarCon(tarjeta);
+            Assert.IsNotNull(segundoBoleto);
+            Assert.IsTrue(segundoBoleto.EsTrasbordo);
+            Assert.AreEqual(0, segundoBoleto.TotalAbonado);
+            Assert.AreEqual(5000 - 1580, tarjeta.ObtenerSaldo()); // saldo no cambia por trasbordo
+        }
+
+        [Test]
+        public void TestTrasbordoMismaLineaNoValido()
+        {
+            TiempoFalso tiempo = new TiempoFalso();
+            tiempo.AgregarMinutos(480); // 08:00
+            Colectivo lineaA1 = new Colectivo("A", tiempo);
+            Colectivo lineaA2 = new Colectivo("A", tiempo);
+            Tarjeta tarjeta = new Tarjeta();
+            tarjeta.Cargar(5000);
+
+            Boleto b1 = lineaA1.PagarCon(tarjeta);
+            Assert.IsNotNull(b1);
+            Assert.AreEqual(1580, b1.TotalAbonado);
+
+            tiempo.AgregarMinutos(30);
+            Boleto b2 = lineaA2.PagarCon(tarjeta);
+            Assert.IsNotNull(b2);
+            Assert.IsFalse(b2.EsTrasbordo);
+            Assert.AreEqual(1580, b2.TotalAbonado);
+            Assert.AreEqual(5000 - 1580 - 1580, tarjeta.ObtenerSaldo());
+        }
+
+        [Test]
+        public void TestTrasbordoFueraDeHorarioNoValido()
+        {
+            TiempoFalso tiempo = new TiempoFalso();
+            tiempo.AgregarMinutos(480); // 08:00
+            Colectivo lineaA = new Colectivo("A", tiempo);
+            Colectivo lineaB = new Colectivo("B", tiempo);
+            Tarjeta tarjeta = new Tarjeta();
+            tarjeta.Cargar(5000);
+
+            Boleto b1 = lineaA.PagarCon(tarjeta);
+            Assert.IsNotNull(b1);
+            Assert.AreEqual(1580, b1.TotalAbonado);
+
+            tiempo.AgregarMinutos(900); // ahora 23:00, fuera de la franja 7:00-22:00
+            Boleto b2 = lineaB.PagarCon(tarjeta);
+            Assert.IsNotNull(b2);
+            Assert.IsFalse(b2.EsTrasbordo);
+            Assert.AreEqual(1580, b2.TotalAbonado);
+            Assert.AreEqual(5000 - 1580 - 1580, tarjeta.ObtenerSaldo());
+        }
+
+        [Test]
+        public void TestTrasbordoDespuesDeUnaHoraNoValido()
+        {
+            TiempoFalso tiempo = new TiempoFalso();
+            tiempo.AgregarMinutos(480); // 08:00
+            Colectivo lineaA = new Colectivo("A", tiempo);
+            Colectivo lineaB = new Colectivo("B", tiempo);
+            Tarjeta tarjeta = new Tarjeta();
+            tarjeta.Cargar(5000);
+
+            Boleto b1 = lineaA.PagarCon(tarjeta);
+            Assert.IsNotNull(b1);
+
+            tiempo.AgregarMinutos(61); // 1 hora y 1 minuto después
+            Boleto b2 = lineaB.PagarCon(tarjeta);
+            Assert.IsNotNull(b2);
+            Assert.IsFalse(b2.EsTrasbordo);
+            Assert.AreEqual(1580, b2.TotalAbonado);
+            Assert.AreEqual(5000 - 1580 - 1580, tarjeta.ObtenerSaldo());
+        }
+
+        [Test]
+        public void TestTrasbordoConMedioBoleto()
+        {
+            TiempoFalso tiempo = new TiempoFalso();
+            tiempo.AgregarMinutos(480); // 08:00
+            Colectivo lineaA = new Colectivo("A", tiempo);
+            Colectivo lineaB = new Colectivo("B", tiempo);
+            MedioBoleto medio = new MedioBoleto();
+            medio.Cargar(2000);
+
+            Boleto b1 = lineaA.PagarCon(medio);
+            Assert.IsNotNull(b1);
+            Assert.AreEqual(790, b1.TotalAbonado);
+
+            tiempo.AgregarMinutos(30);
+            Boleto b2 = lineaB.PagarCon(medio);
+            Assert.IsNotNull(b2);
+            Assert.IsTrue(b2.EsTrasbordo);
+            Assert.AreEqual(0, b2.TotalAbonado);
+            Assert.AreEqual(2000 - 790, medio.ObtenerSaldo());
+        }
     }
 }

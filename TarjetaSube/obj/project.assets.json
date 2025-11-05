@@ -8,23 +8,23 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
-    "E:\\Usuario\\Descargas\\Vs shared\\NuGetPackages": {}
+    "C:\\Users\\agusc\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\TrabajoTarjeta2025\\TarjetaSube\\TarjetaSube.csproj",
+      "projectUniqueName": "C:\\Users\\agusc\\Desktop\\mauri2\\TrabajoTarjeta2025\\TarjetaSube\\TarjetaSube.csproj",
       "projectName": "TarjetaSube",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\TrabajoTarjeta2025\\TarjetaSube\\TarjetaSube.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Desktop\\TrabajoTarjeta2025\\TarjetaSube\\obj\\",
+      "projectPath": "C:\\Users\\agusc\\Desktop\\mauri2\\TrabajoTarjeta2025\\TarjetaSube\\TarjetaSube.csproj",
+      "packagesPath": "C:\\Users\\agusc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\agusc\\Desktop\\mauri2\\TrabajoTarjeta2025\\TarjetaSube\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Usuario\\Descargas\\Vs shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\agusc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -72,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

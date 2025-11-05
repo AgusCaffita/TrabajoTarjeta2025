@@ -44,28 +44,39 @@ namespace TarjetaSube
             int tarifaBase = esInterurbano ? TARIFA_INTERURBANA : TARIFA_BASICA;
 
             int saldoAnterior = tarjeta.ObtenerSaldo();
-            bool pagoExitoso;
+            bool pagoExitoso = false;
             int tarifaAplicada = 0;
+            bool esTrasbordo = false;
 
-            if (tarjeta is MedioBoleto medioBoleto)
+            // Verificar si corresponde trasbordo (gratuito) antes de aplicar tarifas
+            if (tarjeta.PuedeHacerTrasbordo(Linea, tiempo))
             {
-                pagoExitoso = medioBoleto.DescontarSegunViajes(tarifaBase);
-                tarifaAplicada = medioBoleto.ObtenerTarifaActual(tarifaBase);
-            }
-            else if (tarjeta is BoletoGratuito boletoGratuito)
-            {
-                pagoExitoso = boletoGratuito.DescontarSegunViajes(tarifaBase, tiempo);
-                tarifaAplicada = boletoGratuito.ObtenerTarifaActual(tarifaBase);
-            }
-            else if (tarjeta is FranquiciaCompleta franquiciaCompleta)
-            {
-                pagoExitoso = franquiciaCompleta.DescontarSegunViajes(tarifaBase, tiempo);
-                tarifaAplicada = franquiciaCompleta.ObtenerTarifaActual(tarifaBase);
+                esTrasbordo = true;
+                tarifaAplicada = 0;
+                pagoExitoso = true;
             }
             else
             {
-                tarifaAplicada = tarjeta.CalcularTarifaConDescuento(tarifaBase, tiempo);
-                pagoExitoso = tarjeta.Descontar(tarifaAplicada);
+                if (tarjeta is MedioBoleto medioBoleto)
+                {
+                    pagoExitoso = medioBoleto.DescontarSegunViajes(tarifaBase);
+                    tarifaAplicada = medioBoleto.ObtenerTarifaActual(tarifaBase);
+                }
+                else if (tarjeta is BoletoGratuito boletoGratuito)
+                {
+                    pagoExitoso = boletoGratuito.DescontarSegunViajes(tarifaBase, tiempo);
+                    tarifaAplicada = boletoGratuito.ObtenerTarifaActual(tarifaBase);
+                }
+                else if (tarjeta is FranquiciaCompleta franquiciaCompleta)
+                {
+                    pagoExitoso = franquiciaCompleta.DescontarSegunViajes(tarifaBase, tiempo);
+                    tarifaAplicada = franquiciaCompleta.ObtenerTarifaActual(tarifaBase);
+                }
+                else
+                {
+                    tarifaAplicada = tarjeta.CalcularTarifaConDescuento(tarifaBase, tiempo);
+                    pagoExitoso = tarjeta.Descontar(tarifaAplicada);
+                }
             }
 
             if (!pagoExitoso)
@@ -73,13 +84,22 @@ namespace TarjetaSube
                 return null;
             }
 
+            // Si se pagó una tarifa mayor a 0 (no fue trasbordo y no fue gratuito por franquicia),
+            // registrar el pago para iniciar/actualizar la ventana de trasbordos.
+            if (!esTrasbordo && tarifaAplicada > 0)
+            {
+                tarjeta.RegistrarPagoParaTrasbordo(Linea, tiempo);
+            }
+
             int saldoNuevo = tarjeta.ObtenerSaldo();
 
             int totalAbonado = tarifaAplicada;
 
+            // Registrar el viaje en la tarjeta (para contadores internos)
             tarjeta.RegistrarViaje(tiempo);
 
-            return new Boleto(tarjeta.GetType().Name, Linea, totalAbonado, saldoNuevo, tarjeta.Id, tiempo);
+            // Construir boleto indicando si fue trasbordo
+            return new Boleto(tarjeta.GetType().Name, Linea, totalAbonado, saldoNuevo, tarjeta.Id, tiempo, esTrasbordo);
         }
     }
 }
